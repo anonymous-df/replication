@@ -1,5 +1,5 @@
 # Readme
-Artifact package for our paper. This repository includes our data and code.
+Artifact package. This repository includes our data and code.
 
 ## Environment Preparation
 
@@ -8,19 +8,19 @@ CPU:  Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz with 12 core processors, and 32G 
 GPU: NVIDIA RTX 3090 GPU with 24 GB memory
 
 Packages: 
-transformers 4.34.1
-tokenizers 0.14.1
-torchmetrics 1.2.0
-torch 2.1.0
-scikit-learn 1.3.2
-GPUtil 1.4.0
-numpy 1.26.1
-evaluate 0.4.1
-numba 0.58.1
-nltk 3.8.1
-tqdm 4.66.1
-typing 4.8.0
-psycopg2 2.9.9
+`transformers 4.34.1`
+`tokenizers 0.14.1`
+`torchmetrics 1.2.0`
+`torch 2.1.0`
+`scikit-learn 1.3.2`
+`GPUtil 1.4.0`
+`numpy 1.26.1`
+`evaluate 0.4.1`
+`numba 0.58.1`
+`nltk 3.8.1`
+`tqdm 4.66.1`
+`typing 4.8.0`
+`psycopg2 2.9.9`
 
 ## Code Files
 `model.py`: code for model training. We implement our model with the popular deep learning development framework PyTorch and the python package transformers developed by HuggingFace. 
