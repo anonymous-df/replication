@@ -102,19 +102,18 @@ p.adjust(p, method = 'holm', n = length(p))
 
 rownames(data) <- c("n-gram", "DockerFill")
 
-# 分组柱状图
+
 t<-barplot(data,                                        
           col = c("#e0beb3", "#fbf0c6",  "#c2dcf3"),
-          border = "black", # 柱子边框为黑色
-          # names.arg = c('control1', 'case1', 'control2', 'case2', 'case3'),  # 柱子名称
-          #xlab = 'class',  # X轴标题
-          ylab = 'Score',  # Y轴标题
+          border = "black", 
+          # names.arg = c('control1', 'case1', 'control2', 'case2', 'case3'), 
+          #xlab = 'class',  
+          ylab = 'Score',  
           ylim = c(0, 4),
           beside = TRUE,
            )
  
  text(t, data+0.18, labels=c(1.36, 1.65, 2.88, 1.86, 2.01, 3.01, 2.20, 2.33, 3.23))
- # 图例
  legend("top",                                    
         legend = c("n-gram", "LSTM", "DockerFill"),
         fill = c("#e0beb3", "#fbf0c6",  "#c2dcf3"),
