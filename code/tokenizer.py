@@ -13,12 +13,11 @@ from tokenizers.pre_tokenizers import Digits
 # Load data from files
 #paths = [str(x) for x in Path("F:/dockerfile-model/dockerfile_data_1/").glob("*.txt")]
 import pymysql
-#建立数据库连接
+
 
 def getSQLData(table_name):
     con = pymysql.connect(host='localhost', user='root', passwd='1234',db='xxx')
     cur = con.cursor()
-    #用cursor中的execute 使用DDL语句创建一个名为 STUDENT 的表,指定表的字段以及字段类型
     cur.execute("SELECT content_valid from %s;"%table_name)
     rows = cur.fetchall()
     return rows
@@ -33,7 +32,7 @@ for table in table_names:
 
 # Initialize a tokenizer
 normalizer = normalizers.Sequence([
-    NFD(),          # Unicode正规化
+    NFD(),          # Unicode
     StripAccents()] # remove accents
 )
 
@@ -46,7 +45,7 @@ pre_tokenizer = pre_tokenizers.Sequence([
 
 tokenizer.pre_tokenizer = pre_tokenizer
 
-tokenizer.normalizer = normalizer  # 更新到tokenizer里
+tokenizer.normalizer = normalizer  # 
 trainer = BpeTrainer(special_tokens=["<s>", "<pad>", "</s>", "<unk>", "<mask>"],vocab_size=50000, show_progress=True, min_frequency=2)
 # Customize training
 tokenizer.train_from_iterator(text, trainer)
