@@ -1,5 +1,5 @@
 # Readme
-Artifact package. This repository includes our data and code.
+This repository includes our data and code. We intend to enhance the explanation of this artifact and add additional data if the paper is accepted.
 
 ## Environment Preparation
 
@@ -44,4 +44,4 @@ The dataset contains 89,141 instances for training, 11,143 for validation, and 1
 `train_data_lc_task`: Training, validation, and testing data for the LC task.
 
 
-`human_scores`: We consider three evaluation criteria: Similarity (s), Naturalness (n), and Informativeness (i). The score values range from 1 to 4, with a higher score indicating a higher quality of the predicted lines. The score of s1 and s2 means student 1 and student 2.
+`human_scores`: We consider three evaluation criteria: Similarity (s), Naturalness (n), and Informativeness (i). The score values range from 1 to 4, with a higher score indicating a higher quality of the predicted lines. Columns are suffixed with 1 and 2 to indicate Student 1 and Student 2, respectively.
