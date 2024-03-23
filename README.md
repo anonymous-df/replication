@@ -29,6 +29,8 @@ Packages:
 
 `soft_sharing.py`: soft parameter sharing class for model MTL pre-training.
 
+`multitask_data_collator.py`: code for dealing with MTL training data.
+
 `testing_tc.py` and `testing_lc.py`: code for model testing. We use two evaluation metrics for the TC task, namely the Accuracy (Acc) of the top prediction and the
 MRR for the top-5 recommendations. Five commonly used evaluation metrics are employed for the LC task: EM, ED, BLEU, ROUGE, and METEOR.
 
@@ -36,6 +38,8 @@ MRR for the top-5 recommendations. Five commonly used evaluation metrics are emp
 
 `tokenizer.py`: code for tokenizer.  We use sub-word tokenization with the Byte-Pair Encoding (BPE) algorithm, as previous studies found that BPE can substantially reduce the vocabulary size
 and alleviate the OOV problem.
+
+`modeling_codesage.py`: code for use codesage model.
 
 
 ## Data Files
