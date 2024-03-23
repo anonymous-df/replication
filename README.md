@@ -1,5 +1,5 @@
 # Readme
-This repository includes our data and code. We intend to enhance the explanation of this artifact and add additional data if the paper is accepted.
+This repository includes our data and code. We intend to enhance the explanation of this artifact if the paper is accepted.
 
 ## Environment Preparation
 
