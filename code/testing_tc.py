@@ -9,9 +9,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 import pickle
 
 from sklearn.metrics import f1_score, roc_auc_score, accuracy_score, precision_score, recall_score, average_precision_score, balanced_accuracy_score
-from transformers import BartForConditionalGeneration, BartConfig, Trainer, TrainingArguments, \
-    AutoModelForSequenceClassification, T5ForConditionalGeneration, BartTokenizer, AutoTokenizer, \
-    BartForSequenceClassification, PLBartForSequenceClassification, RobertaForMaskedLM, RobertaConfig
+from transformers import RobertaForMaskedLM, RobertaConfig
 from transformers import PreTrainedTokenizerFast
 import numpy as np
 import random
@@ -87,18 +85,6 @@ def testing(path):
             if predictions[:,0][j] == labels[j]:
                 acc = acc + 1
 
-        preds = [tokenizer.decode(item) for item in predictions[:,0]]
-        #print(preds)
-        trues = [tokenizer.decode(item) for item in labels]
-        length_preds = len(''.join(preds))
-        length_trues = len(''.join(trues))
-        if length_preds >= length_trues:
-            length = length_preds
-        else:
-            length = length_trues
-        ed_metric = EditDistance(reduction="sum")
-        edits = edits + float(ed_metric(preds, trues) / length)
-
         for x in range(0, len(labels)):
             for y in range(0, 5):
                 if labels[x] == predictions[x, y]:
@@ -111,9 +97,7 @@ def testing(path):
         'masks': masks,
         'Acc-1': float(acc / masks),
         'Acc-5': float(acc_5 / masks),
-        'MRR': float(mrrs / masks),
-        'EM': float(perfect / number),
-        'ED': float(edits / number)
+        'MRR': float(mrrs / masks)
     }
     print(metrics)
 
