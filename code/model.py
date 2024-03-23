@@ -6,9 +6,8 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 import pickle
 
 from sklearn.metrics import f1_score, roc_auc_score, accuracy_score, precision_score, recall_score, average_precision_score, balanced_accuracy_score
-from transformers import BartForConditionalGeneration, BartConfig, Trainer, TrainingArguments, \
-    AutoModelForSequenceClassification, T5ForConditionalGeneration, BartTokenizer, AutoTokenizer, \
-    BartForSequenceClassification, PLBartForSequenceClassification, RobertaForMaskedLM, RobertaConfig
+from transformers import RobertaForMaskedLM, BertForMaskedLM, Trainer, TrainingArguments
+from modeling_codesage import CodeSageForMaskedLM
 from transformers import PreTrainedTokenizerFast
 import numpy as np
 import random
@@ -114,7 +113,7 @@ training_args = TrainingArguments(
     logging_strategy="steps",
     save_strategy="steps",
     learning_rate=5e-5,
-    per_device_train_batch_size=16,
+    per_device_train_batch_size=8,
     seed=123,
     save_steps=10000,
     logging_steps=1000,
