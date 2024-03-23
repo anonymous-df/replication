@@ -23,30 +23,30 @@ Packages:
 `psycopg2 2.9.9`
 
 ## Code Files
-`model.py`: code for model training. We implement our model with the popular deep learning development framework PyTorch and the python package transformers developed by HuggingFace. 
+`code/model.py`: code for model training. We implement our model with the popular deep learning development framework PyTorch and the python package transformers developed by HuggingFace. 
 
-`hard_sharing.py`: hard parameter sharing class for model MTL pre-training.
+`code/hard_sharing.py`: hard parameter sharing class for model MTL pre-training.
 
-`soft_sharing.py`: soft parameter sharing class for model MTL pre-training.
+`code/soft_sharing.py`: soft parameter sharing class for model MTL pre-training.
 
-`multitask_data_collator.py`: code for dealing with MTL training data.
+`code/multitask_data_collator.py`: code for dealing with MTL training data.
 
-`testing_tc.py` and `testing_lc.py`: code for model testing. We use two evaluation metrics for the TC task, namely the Accuracy (Acc) of the top prediction and the
+`code/testing_tc.py` and `testing_lc.py`: code for model testing. We use two evaluation metrics for the TC task, namely the Accuracy (Acc) of the top prediction and the
 MRR for the top-5 recommendations. Five commonly used evaluation metrics are employed for the LC task: EM, ED, BLEU, ROUGE, and METEOR.
 
-`instruction_types.py`: code for analysis of model performance when predicts different token types. 
+`code/instruction_types.py`: code for analysis of model performance when predicts different token types. 
 
-`tokenizer.py`: code for tokenizer.  We use sub-word tokenization with the Byte-Pair Encoding (BPE) algorithm, as previous studies found that BPE can substantially reduce the vocabulary size
+`code/tokenizer.py`: code for tokenizer.  We use sub-word tokenization with the Byte-Pair Encoding (BPE) algorithm, as previous studies found that BPE can substantially reduce the vocabulary size
 and alleviate the OOV problem.
 
-`modeling_codesage.py`: code for use codesage model.
+`code/modeling_codesage.py`: code for use codesage model.
 
 
 ## Data Files
 The dataset contains 167,010 instances for pre-training,  89,072 for fine-tuning's training, 11,134 for validation, and 11,134 for testing. 
 
-`train_data_tc_task`: Training, validation, and testing data for the TC task.
+`data/TC`: Training, validation, and testing data for the TC task.
 
-`train_data_lc_task`: Training, validation, and testing data for the LC task.
+`data/LC`: Training, validation, and testing data for the LC task.
 
-`tokenizer.json`: Our tokenizer file.
+`data/tokenizer.json`: Our tokenizer file.
